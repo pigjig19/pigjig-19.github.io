@@ -1,0 +1,29 @@
+<html>
+<head>
+<title> Menu </title>
+<script src="https://simplycodingcourses.com/files/simply.js"></script>
+<script>
+function start(){
+sjs.open("target",500,500);
+
+
+var background = new sjs.Image("Images/background.png");
+
+var title_txt = new sjs.Text("Whack A Worm Not A Herm", 45, "#B19CD9");
+title_txt.center().top();
+
+var startBtn = new sjs.Button("Start", function(){
+  window.location = "whackworms.html";
+});
+startBtn.center();
+
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+<h1> Whack A Worm Not A Herm </h1>
+
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html>

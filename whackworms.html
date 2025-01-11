@@ -1,0 +1,102 @@
+<html>
+<head>
+<title> Whack A Worm Not A Herm </title>
+<script src="https://simplycodingcourses.com/files/simply.js"></script>
+<script>
+function start(){
+sjs.open("target",500,500);
+
+
+//background
+var background = new sjs.Image("Images/background.png");
+
+
+//holes
+var hole1 = new sjs.Image("Images/hole.png");
+hole1.type = "hole";
+hole1.setSize(300, 300);
+hole1.center();
+
+var hole2 = new sjs.Image("Images/hole.png");
+hole2.type = "hole";
+hole2.setSize(300, 300);
+hole2.center().offset(-300, -300);
+
+var hole3 = new sjs.Image("Images/hole.png");
+hole3.type = "hole";
+hole3.setSize(300, 300);
+hole3.center().offset(300, -300);
+
+var hole4 = new sjs.Image("Images/hole.png");
+hole4.type = "hole";
+hole4.setSize(300, 300);
+hole4.center().offset(-300, 300);
+
+var hole5 = new sjs.Image("Images/hole.png");
+hole5.type = "hole";
+hole5.setSize(300, 300);
+hole5.center().offset(300, 300);
+
+
+//score
+var score = 0;
+var score_txt = new sjs.Text("Score: 0", 25, "white");
+
+
+//intervals & random hole
+
+function resetHole(hole){
+  setTimeout(function(){
+    hole.setImage("Images/hole.png");
+  }, 1690);
+}
+
+setInterval(function(){
+  var x = Math.floor(Math.random() * 9)
+  if(x == 0){
+    hole1.setImage("Images/worm.gif");
+    resetHole(hole1);
+  } else if(x == 1){
+    hole1.setImage("Images/herm.gif");
+    resetHole(hole1);
+  } else if(x == 2){
+    hole2.setImage("Images/worm.gif");
+    resetHole(hole2);
+  } else if(x == 3){
+    hole2.setImage("Images/herm.gif");
+    resetHole(hole2);
+  } else if(x == 4){
+    hole3.setImage("Images/worm.gif");
+    resetHole(hole3);
+  } else if(x == 5){
+    hole3.setImage("Images/herm.gif");
+    resetHole(hole3);
+  } else if(x == 6){
+    hole4.setImage("Images/worm.gif");
+    resetHole(hole4);
+  } else if(x == 7){
+    hole4.setImage("Images/herm.gif");
+    resetHole(hole4);
+  } else if(x == 8){
+    hole5.setImage("Images/worm.gif");
+    resetHole(hole5);
+  } else {
+    hole5.setImage("Images/herm.gif");
+    resetHole(hole5);
+  }
+}, 3000);
+
+
+//click
+
+
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+<h1> Whack A Worm Not A Herm </h1>
+
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html>
